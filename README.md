@@ -1,5 +1,5 @@
 # WinDeckHelper
-Utilities installer and tweaker for your Windows Steam Deck 
+WinDeckHelper - Utilities installer and tweaker for your Windows Steam Deck 
 
 Project inspired by [CelesteHeartsong / SteamDeckAutomatedInstall](https://github.com/CelesteHeartsong/SteamDeckAutomatedInstall)
 
