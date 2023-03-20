@@ -1,6 +1,6 @@
 # WinDeckHelper
 
-[ENG](https://github.com/anejolov/WinDeckHelper/edit/main/README.md) | [РУС](https://github.com/anejolov/WinDeckHelper/edit/main/README_RUS.md)
+[ENG](https://github.com/anejolov/WinDeckHelper/blob/main/README.md) | [РУС](https://github.com/anejolov/WinDeckHelper/blob/main/README_RUS.md)
 
 WinDeckHelper - Utilities installer and tweaker for your Windows Steam Deck.
 
