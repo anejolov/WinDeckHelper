@@ -3,7 +3,7 @@ WinDeckHelper - Utilities installer and tweaker for your Windows Steam Deck
 
 Project inspired by [CelesteHeartsong / SteamDeckAutomatedInstall](https://github.com/CelesteHeartsong/SteamDeckAutomatedInstall)
 
-[Download Here](https://github.com/anejolov/WinDeckHelper/releases/tag/v1.0.0)
+[Download latest version here](https://github.com/anejolov/WinDeckHelper/releases/tag/v1.0.0)
 
 Just run WinDeckHelper.exe as Administrator
 
