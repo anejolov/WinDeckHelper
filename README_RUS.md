@@ -1,4 +1,6 @@
 # WinDeckHelper
+[ENG](https://github.com/anejolov/WinDeckHelper/blob/main/README.md) | [РУС](https://github.com/anejolov/WinDeckHelper/blob/main/README_RUS.md)
+
 WinDeckHelper - Утилита, которая автоматически устанавит всё самое нужное для работы Steam Deck на Windows.
 
 На создание проекта вдохновил  [CelesteHeartsong / SteamDeckAutomatedInstall](https://github.com/CelesteHeartsong/SteamDeckAutomatedInstall)
