@@ -7,7 +7,7 @@ Software you may need for Windows Steam Deck.
 [ Chrome browser ]
 - Google web browser.
 
-[ 7-zop archiver ]
+[ 7-zip archiver ]
 - File archiver.
 
 [ ShareX screenshot tool ]
