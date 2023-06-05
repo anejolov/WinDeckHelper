@@ -8,7 +8,7 @@ Project inspired by [CelesteHeartsong / SteamDeckAutomatedInstall](https://githu
 
 ![image](https://user-images.githubusercontent.com/118720241/226356093-3b5ec745-0901-4a1f-8951-f1b70d81feea.png)
 
-[Download latest version here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.0)
+[Download latest version here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.1)
 
 ## How To Install
 - Download WinDeckHelper.exe from [here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.0) and run it as Administrator.
