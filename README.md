@@ -11,7 +11,7 @@ Project inspired by [CelesteHeartsong / SteamDeckAutomatedInstall](https://githu
 [Download latest version here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.1)
 
 ## How To Install
-- Download WinDeckHelper.exe from [here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.0) and run it as Administrator.
+- Download WinDeckHelper.exe from [here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.1) and run it as Administrator.
 - Choose the stuff you need and click on START.
 - Reboot the system after the process is finished.
 
