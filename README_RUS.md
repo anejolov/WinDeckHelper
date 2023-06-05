@@ -10,7 +10,7 @@ WinDeckHelper - Утилита, которая автоматически уст
 [Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.1)
 
 ## Как Установить
-- Скачать WinDeckHelper.exe [здесь](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.0) и запустить от имени Администратора.
+- Скачать WinDeckHelper.exe [здесь](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.1) и запустить от имени Администратора.
 - Выбрать, что будем ставить и нажимаем СТАРТ.
 - Перезагрузить систему после окончания процесса.
 
