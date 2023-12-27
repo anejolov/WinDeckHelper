@@ -2,7 +2,7 @@
 Must-have things for your Windows Steam Deck.
 
 [ Drivers ]
-- Video Driver - Valve: March-21-2023
+- Video Driver - Valve: Nov-17-2023
 - Audio Driver - Valve: Oct-10-2022
 - Wi-Fi driver - Microsoft Update
 - Bluetooth driver - Microsoft Update
@@ -10,14 +10,14 @@ Must-have things for your Windows Steam Deck.
 
 [ Microsoft Visual C++ ]
 - Visual C++ modules for game and application compatibility.
-- Version:  0.70.0
+- Version:  0.77.0
 
 [ Microsoft DirectX ]
 - A collection of application programming interfaces (APIs) for game compatibility.
 
 [ Dot NET ]
 - Software framework developed by Microsoft that runs primarily on Microsoft Windows.
-- Version: 6.0.407
+- Version: 6.0.417
 
 [ Rivatuner Statistics Server (RTSS) ]
 - Tool for frame rate monitoring, on-screen display, and high-performance video capturing. Required for 'Steam Deck Tools'.
@@ -25,7 +25,7 @@ Must-have things for your Windows Steam Deck.
 
 [ AMD Adrenalin ]
 - Powerful tool for AMD video cards that allows you to adjust GPU scaling, Image Sharpening, Color Correction etc.
-- Version:  23.40.33
+- Version:  23.9.1
 
 [ Custom Resolution Utility ]
 - Software tool to create custom resolutions, refresh rates and monitor timings for graphics cards. Required to unlock screen resolutions on Steam Deck.
@@ -33,7 +33,7 @@ Must-have things for your Windows Steam Deck.
 
 [ Steam Deck Tools ]
 - Software suite for Steam Deck that includes Fan Control, Performance Overlay, Power Control and Steam Controller functionality.
-- Version: 0.6.17
+- Version: 0.6.22
 
 [ Disable Hibernation ]
 - Disable Hibernation mode. Waking up from hibernate may cause the BSOD on Steam Deck.
