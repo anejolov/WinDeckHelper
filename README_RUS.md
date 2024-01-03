@@ -10,6 +10,8 @@ WinDeckHelper - Утилита, которая автоматически уст
 [Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/tag/v.2.2)
 
 ## Как Установить
+- Для Windows 10 драйвер Wifi нужно установить вручную. Скачать его можно с официального Valve [сайта](https://steamdeck-packages.steamos.cloud/misc/windows/drivers/RTLWlanE_WindowsDriver_2024.0.10.137_Drv_3.00.0039_Win11.L.zip)
+- Подключитесь к интернету
 - Скачать WinDeckHelper.exe [здесь](https://github.com/anejolov/WinDeckHelper/releases/tag/v.2.2) и запустить от имени Администратора.
 - Выбрать, что будем ставить и нажимаем СТАРТ.
 - Перезагрузить систему после окончания процесса.
