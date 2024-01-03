@@ -11,6 +11,8 @@ Project inspired by [CelesteHeartsong / SteamDeckAutomatedInstall](https://githu
 [Download latest version here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.2)
 
 ## How To Install
+- For Windows 10 you have to install Wifi driver manually. You can download it from valve [site](https://steamdeck-packages.steamos.cloud/misc/windows/drivers/RTLWlanE_WindowsDriver_2024.0.10.137_Drv_3.00.0039_Win11.L.zip)
+- Connect to the internet
 - Download WinDeckHelper.exe from [here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.2) and run it as Administrator.
 - Choose the stuff you need and click on START.
 - Reboot the system after the process is finished.
