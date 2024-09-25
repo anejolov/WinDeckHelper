@@ -1,0 +1,67 @@
+CoexVersion : Current Coex Version
+DesiredBtFwVersion : Desired BT FW Version
+WiFiBtCoexType : Date_CoexVersion_DesiredBtFwVersion
+
+8192e1Ant : 20140527_0x4f
+8192e2Ant : 20171130_0x3c_0x03
+8703b1Ant : 20180330_0x1e_0x1c
+8723b1Ant : 20181002_0x70_0x6d
+8723b2Ant : 20180205_0x52_0x50
+8723d1Ant : 20200916_0x342_0x33
+8723d2Ant : 20200916_0x362_0x35
+8812a1Ant : 20140708_0x52
+8812a2Ant : 20160921_0x37_0x01
+8814a2Ant : 20170113_0x04_0x03
+8814b1Ant : 20161014_0x2f_0x28
+8814b2Ant : 20161014_0x2f_0x28
+8821a1Ant : 20171024_0x6c_0x62
+8821a2Ant : 20180614_0x6e_0x5c
+8821c1Ant : 20210622_0x499_0x54
+8821c2Ant : 20210622_0x499_0x54
+8822b1Ant : 20200730_0x783_0x7e
+8822b2Ant : 20191216_0x78_0x75
+********************************************
+          IC Type : FW version
+********************************************
+FW_Ver_8188F : 4.1 
+FW_Ver_8192E : 35.5 
+FW_Ver_8192F : 5.0 
+FW_Ver_8703B : 6.2 
+FW_Ver_8723B : 41.9 
+FW_Ver_8723D : 49.1 
+FW_Ver_8812A : 52.12 
+FW_Ver_8814A : 33.2 
+FW_Ver_8814B : 0.0 
+FW_Ver_8821A : 42.3 
+FW_Ver_8821C : 23.27 
+FW_Ver_8822B : 30.20 
+FW_Ver_8822C : 7.28 
+********************************************
+          IC Type : PHY version
+********************************************
+PHY_Ver_8188e : 71 
+PHY_Ver_8188f : 38 
+PHY_Ver_8192e : 61 
+PHY_Ver_8192f : 46 
+PHY_Ver_8195b : 46 
+PHY_Ver_8197f : 72 
+PHY_Ver_8197g : 0 
+PHY_Ver_8198f : 32 
+PHY_Ver_8703b : 18 
+PHY_Ver_8710b : 18 
+PHY_Ver_8710c : 0 
+PHY_Ver_8721d : 0 
+PHY_Ver_8723b : 29 
+PHY_Ver_8723d : 40 
+PHY_Ver_8812a : 57 
+PHY_Ver_8812f : 0 
+PHY_Ver_8814a : 110 
+PHY_Ver_8814b : 35 
+PHY_Ver_8821a : 59 
+PHY_Ver_8821c : 60 
+PHY_Ver_8822b : 115 
+PHY_Ver_8822c : 39 
+********************************************
+          IC Type : HALMAC version
+********************************************
+HALMAC_ver : .. pathch:

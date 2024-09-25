@@ -1,0 +1,1075 @@
+;/****************************************************************************
+; * Qualcomm Wireless LAN WDI Miniport Adapter                       *
+; *                                                                          *
+; * Copyright (c) 2018-2023 Qualcomm Technologies, Inc.                   *
+; * All Rights Reserved.                                                     *
+; * Confidential and Proprietary - Qualcomm Technologies, Inc.       *
+; *                                                                          *
+; * INF file for Qualcomm reference designs                          *
+; ****************************************************************************/
+
+[version]
+Signature   = "$Windows NT$"
+Class       = Net
+ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider    = %QUALCOMM%
+CatalogFile = qcwlan64.cat
+DriverVer   = 12/26/2023,1.0.123.1610
+PnpLockdown = 1
+
+[Manufacturer]
+%QUALCOMM%  = QUALCOMM, NTamd64.10.0
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;
+; OS 10.0 Manufacturer section
+;
+[QUALCOMM.NTamd64.10.0]
+; DisplayName               Section                 DeviceID
+; -----------               -------                 --------
+;QC Reference Design
+%QcWlan.DeviceDesc.685x%     = QcWlan_LITHIUM.ndi,                 PCI\VEN_17CB&DEV_1103&SUBSYS_010817CB
+%QcWlan.DeviceDesc.685x%     = QcWlan_LITHIUM.ndi,                 PCI\VEN_17CB&DEV_1103&SUBSYS_337417CB 
+
+;NFA765 v2.0
+%QcWlan.DeviceDesc.685x%     = QcWlan_NEC_NFA765_2_0.ndi,          PCI\VEN_17CB&DEV_1103&SUBSYS_080D11AD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_E0B6105B 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_E0B9105B 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_E0BD105B 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_081D11AD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_082D11AD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_E0BA105B 
+%QcWlan.DeviceDesc.685x%     = QcWlan_LE_NFA765_2_0.ndi,           PCI\VEN_17CB&DEV_1103&SUBSYS_E0BE17AA 
+%QcWlan.DeviceDesc.685x%     = QcWlan_HO_NFA765_2_0.ndi,           PCI\VEN_17CB&DEV_1103&SUBSYS_E0CA105B 
+%QcWlan.DeviceDesc.685x%     = QcWlan_D_NFA765_2_0.ndi,            PCI\VEN_17CB&DEV_1103&SUBSYS_E0B8105B 
+%QcWlan.DeviceDesc.685x_h%   = QcWlan_H_NFA765_2_0.ndi,            PCI\VEN_17CB&DEV_1103&SUBSYS_E0BB105B 
+
+;NFA725 v2.0
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_910814CD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_920814CD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_930814CD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_LE_NFA725_2_0.ndi,           PCI\VEN_17CB&DEV_1103&SUBSYS_930817AA 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_940814CD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_0.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_950814CD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_D_NFA725_2_0.ndi,            PCI\VEN_17CB&DEV_1103&SUBSYS_960814CD 
+
+;NFA765 v2.1
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_1.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_A82D11AD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_AC_NFA765_2_1.ndi,           PCI\VEN_17CB&DEV_1103&SUBSYS_A84D11AD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_HO_NFA765_2_1.ndi,           PCI\VEN_17CB&DEV_1103&SUBSYS_E0CC105B 
+%QcWlan.DeviceDesc.685x%     = QcWlan_D_NFA765_2_1.ndi,            PCI\VEN_17CB&DEV_1103&SUBSYS_E0CE105B
+%QcWlan.DeviceDesc.685x_h%   = QcWlan_H_NFA765_2_1.ndi,            PCI\VEN_17CB&DEV_1103&SUBSYS_E0C4105B  
+%QcWlan.DeviceDesc.685x%     = QcWlan_NEC_NFA765_2_1.ndi,          PCI\VEN_17CB&DEV_1103&SUBSYS_A80D11AD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_1.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_E0D5105B 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA765_2_1.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_E0D7105B 
+%QcWlan.DeviceDesc.685x%     = QcWlan_AS_NFA765_2_1.ndi, 	       PCI\VEN_17CB&DEV_1103&SUBSYS_E103105B ;for Asus
+%QcWlan.DeviceDesc.685x%     = QcWlan_LO_NFA765_2_1.ndi,           PCI\VEN_17CB&DEV_1103&SUBSYS_A85D11AD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_SPL_NFA765_2_1_0268.ndi,     PCI\VEN_17CB&DEV_1103&SUBSYS_02681DAC 
+%QcWlan.DeviceDesc.685x%     = QcWlan_SPL_NFA765_2_1_1268.ndi,     PCI\VEN_17CB&DEV_1103&SUBSYS_12681DAC 
+
+;NFA725 v2.1
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_1.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_910914CD  
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_1.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_920914CD  
+%QcWlan.DeviceDesc.685x%     = QcWlan_LE_NFA725_2_1.ndi,           PCI\VEN_17CB&DEV_1103&SUBSYS_930917AA  
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_1.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_940914CD  
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_1.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_950914CD  
+%QcWlan.DeviceDesc.685x%     = QcWlan_D_NFA725_2_1.ndi,            PCI\VEN_17CB&DEV_1103&SUBSYS_960914CD 
+%QcWlan.DeviceDesc.685x%     = QcWlan_NFA725_2_1.ndi,              PCI\VEN_17CB&DEV_1103&SUBSYS_9F0914CD  
+
+;;Start of LITHIUM section
+[QcWlan_LITHIUM.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_LITHIUM.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_LITHIUM.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_LITHIUM.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of LITHIUM section
+
+;;Start of NFA765 v2.0
+[QcWlan_NFA765_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_0.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_0.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_NFA765_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_NFA765_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of NFA765 v2.0
+
+;;Start of D NFA765 v2.0
+[QcWlan_D_NFA765_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_0.reg, enableHwRfKill.reg,
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_0.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_D_NFA765_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_D_NFA765_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of D NFA765 v2.0
+
+;;Start of H NFA765 v2.0
+[QcWlan_H_NFA765_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BandCapability.reg, BD_NFA765_2_0.reg, Enable6GcountryPolicy.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_0.CopyFiles, QcWlan_BD_H_NFA765_2_0.CopyFiles, QcWlan_BD_H_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_H_NFA765_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_H_NFA765_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of H NFA765 v2.0
+
+;;Start of LE NFA765 v2.0
+[QcWlan_LE_NFA765_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_0.reg, enableHwRfKill.reg, DisableReport6GAPtoOS.reg, enableDMAR.reg, P2PPassive_LE.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_0.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_LE_NFA765_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan_DMAr.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_LE_NFA765_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of LE NFA765 v2.0
+
+;;Start of HO NFA765 v2.0
+[QcWlan_HO_NFA765_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_0.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_0.CopyFiles, QcWlan_BD_HO_NFA765_2_0.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_HO_NFA765_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_HO_NFA765_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of HO NFA765 v2.0
+
+;;Start of NEC NFA765 v2.0
+[QcWlan_NEC_NFA765_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_0.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_0.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_NEC_NFA765_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_NEC_NFA765_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of NEC NFA765 v2.0
+
+;;Start of NFA725 v2.0
+[QcWlan_NFA725_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA725_2_0.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA725_2_0.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_NFA725_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_NFA725_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of NFA725 v2.0
+
+;;Start of D NFA725 v2.0
+[QcWlan_D_NFA725_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA725_2_0.reg, enableHwRfKill.reg,
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA725_2_0.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_D_NFA725_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_D_NFA725_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of D NFA725 v2.0
+
+;;Start of LE NFA725 v2.0
+[QcWlan_LE_NFA725_2_0.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA725_2_0.reg, enableHwRfKill.reg, P2PPassive_LE.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA725_2_0.CopyFiles, QcWlan_BD_LE_NFA725_2_0.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_LE_NFA725_2_0.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_LE_NFA725_2_0.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of LE NFA725 v2.0
+
+;;Start of NFA765 v2.1
+[QcWlan_NFA765_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_1.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_NFA765_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_NFA765_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of NFA765 v2.1
+
+;;Start of AS NFA765 v2.1 section
+[QcWlan_AS_NFA765_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_1.reg, enableHwRfKill.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_AS_NFA765_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_AS_NFA765_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of AS NFA765 v2.1 section
+
+;;Start of LO NFA765 v2.1
+[QcWlan_LO_NFA765_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_1.reg, enableHwRfKill.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_LO_NFA765_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_LO_NFA765_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of LO NFA765 v2.1
+
+;;Start of H NFA765 v2.1
+[QcWlan_H_NFA765_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BandCapability.reg, BD_NFA765_2_1.reg, Enable6GcountryPolicy.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles, QcWlan_BD_H_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_H_NFA765_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_H_NFA765_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of H NFA765 v2.1
+
+;;Start of HO NFA765 v2.1
+[QcWlan_HO_NFA765_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_1.reg, P2PPassive_HO.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles, QcWlan_BD_HO_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_HO_NFA765_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_HO_NFA765_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of HO NFA765 v2.1
+
+;;Start of D NFA765 v2.1
+[QcWlan_D_NFA765_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_1.reg, enableHwRfKill.reg, EnableMulticastFilter.reg, enableDMAR.reg, EnablePcieLinkRetry.Reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles, QcWlan_BD_D_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_D_NFA765_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan_DMAr.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_D_NFA765_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of D NFA765 v2.1
+
+;;Start of SPL_0268 NFA765 v2.1
+[QcWlan_SPL_NFA765_2_1_0268.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_SPL_NFA765_2_1_0268.reg, enableHwRfKill.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles, QcWlan_BD_SPL_NFA765_2_1_0268.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_SPL_NFA765_2_1_0268.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_SPL_NFA765_2_1_0268.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of SPL_0268 NFA765 v2.1
+
+;;Start of SPL_1268 NFA765 v2.1
+[QcWlan_SPL_NFA765_2_1_1268.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_SPL_NFA765_2_1_1268.reg, enableHwRfKill.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles, QcWlan_BD_SPL_NFA765_2_1_1268.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_SPL_NFA765_2_1_1268.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_SPL_NFA765_2_1_1268.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of SPL_1268 NFA765 v2.1
+
+;;Start of NEC NFA765 v2.1
+[QcWlan_NEC_NFA765_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_1.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_NEC_NFA765_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_NEC_NFA765_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of NEC NFA765 v2.1
+
+;;Start of NFA725 v2.1
+[QcWlan_NFA725_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA725_2_1.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA725_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_NFA725_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_NFA725_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of NFA725 v2.1
+
+;;Start of D NFA725 v2.1
+[QcWlan_D_NFA725_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA725_2_1.reg, enableHwRfKill.reg,
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA725_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_D_NFA725_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_D_NFA725_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of D NFA725 v2.1
+
+;;Start of LE NFA725 v2.1
+[QcWlan_LE_NFA725_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA725_2_1.reg, enableHwRfKill.reg, DisableReport6GAPtoOS.reg, enableDMAR.reg, P2PPassive_LE.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA725_2_1.CopyFiles, QcWlan_BD_LE_NFA725_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_LE_NFA725_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan_DMAr.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_LE_NFA725_2_1.ndi.NTamd64.HW]
+AddReg  = MSI_8.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of LE NFA725 v2.1
+
+;;Start of AC NFA765 v2.1
+[QcWlan_AC_NFA765_2_1.ndi.NTamd64]
+Characteristics = 0x84
+BusType         = 5
+AddReg          = QcWlan_os63.reg, QcWlan11n.reg, smpsDynamic.reg, roam.reg, wmmac.reg, enableLegacyBurst.reg, M3Needed.reg, FileName.reg, TxBf.reg, wowEnable.reg, wowWakePattern.reg, WakeOnMagicPacket.reg, UseRegdmnfromFW.reg, enableSmbios.reg, BD_NFA765_2_1.reg
+CopyFiles       = QcWlan.CopyFiles, QcWlanFWFile.CopyFiles, QcWlan_BD_NFA765_2_1.CopyFiles, QcWlan_BD_AC_NFA765_2_1.CopyFiles
+*IfType         = 71        ; IF_TYPE_IEEE80211
+*MediaType      = 16        ; NdisMediumNative802_11
+*PhysicalMediaType = 9      ; NdisPhysicalMediumNative802_11
+Include         = machine.inf, netvwifibus.inf
+Needs           = VWiFiBus.CopyFiles
+
+[QcWlan_AC_NFA765_2_1.ndi.NTamd64.Services]
+AddService = qcwlan, 2, QcWlan.Service, QcWlan.EventLog
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+
+[QcWlan_AC_NFA765_2_1.ndi.NTamd64.HW]
+AddReg  = MSI.reg
+Include = machine.inf, netvwifibus.inf
+Needs   = PciASPMOptIn.HW, VWiFiBus.PnPFilterRegistration.HW
+;;End of NFA765 v2.1
+
+;;Start of registries sections
+[QcWlan_os63.reg]
+HKR, Ndi,                           Service,    0, "qcwlan"
+HKR, Ndi\Interfaces,                UpperRange, 0, "ndis5"
+HKR, Ndi\Interfaces,                LowerRange, 0, "wlan,ethernet,vwifi"
+
+[QcWlan11n.reg]
+HKR, Ndi\Params\roamPolicy,         ParamDesc,  0, %RoamAggressive%
+HKR, Ndi\Params\roamPolicy,         Type,       0, "enum"
+HKR, Ndi\Params\roamPolicy\enum,    "5",        0, %RssiHighest%
+HKR, Ndi\Params\roamPolicy\enum,    "4",        0, %RssiMedium-high%
+HKR, Ndi\Params\roamPolicy\enum,    "3",        0, %RssiMedium%
+HKR, Ndi\Params\roamPolicy\enum,    "2",        0, %RssiMedium-low%
+HKR, Ndi\Params\roamPolicy\enum,    "1",        0, %RssiLowest%
+HKR, Ndi\Params\roamPolicy,         Default,    0, "3"
+HKR, Ndi\params\NetworkAddress,     ParamDesc,  0,  %NetworkAddress%
+HKR, Ndi\params\NetworkAddress,     default,    0,  ""
+HKR, Ndi\params\NetworkAddress,     LimitText,  0,  "12"
+HKR, Ndi\params\NetworkAddress,     UpperCase,  0,  "1"
+HKR, Ndi\params\NetworkAddress,     optional,   0,  "1"
+HKR, Ndi\params\NetworkAddress,     type,       0,  "edit"
+HKR, Ndi\Params\StaPreferredBand,         			ParamDesc,  	0, %PreferredBand%
+HKR, Ndi\Params\StaPreferredBand,         			Type,       	0, "enum"
+HKR, Ndi\Params\StaPreferredBand\enum,    			"4",        	0, %Preferred6GBand%
+HKR, Ndi\Params\StaPreferredBand\enum,    			"3",        	0, %Preferred5GBand%
+HKR, Ndi\Params\StaPreferredBand\enum,    			"2",        	0, %Preferred2GBand%
+HKR, Ndi\Params\StaPreferredBand\enum,    			"1",        	0, %PreferredBandNone%
+HKR, Ndi\Params\StaPreferredBand,         			Default,    	0, "1"
+HKR, Ndi\Params\StaWirelessMode,         			ParamDesc,  	0, %WirelessMode%
+HKR, Ndi\Params\StaWirelessMode,         			Type,       	0, "enum"
+HKR, Ndi\Params\StaWirelessMode\enum,    			"13",        	0, %11a/b/g/n/ac/ax%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"12",        	0, %11a/n/ac/ax%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"11",        	0, %11a/n/ac%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"10",        	0, %11a/n%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"9",        	0, %11b/g/n/ax%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"8",        	0, %11b/g/n%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"7",        	0, %11b/g%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"6",        	0, %11ax%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"5",        	0, %11ac%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"4",        	0, %11n%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"3",        	0, %11g%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"2",        	0, %11b%
+HKR, Ndi\Params\StaWirelessMode\enum,    			"1",        	0, %11a%
+HKR, Ndi\Params\StaWirelessMode,         			Default,    	0, "13"
+HKR, Ndi\Params\PreferredChanWidth2G,         		ParamDesc,  	0, %Preferred2GChanWidth%
+HKR, Ndi\Params\PreferredChanWidth2G,         		Type,       	0, "enum"
+HKR, Ndi\Params\PreferredChanWidth2G\enum,    		"1",        	0, %ChanWidth20M%
+HKR, Ndi\Params\PreferredChanWidth2G\enum,    		"0",        	0, "Auto"
+HKR, Ndi\Params\PreferredChanWidth2G,         		Default,    	0, "0"
+HKR, Ndi\Params\PreferredChanWidth5G,         		ParamDesc,  	0, %Preferred5GChanWidth%
+HKR, Ndi\Params\PreferredChanWidth5G,         		Type,       	0, "enum"
+HKR, Ndi\Params\PreferredChanWidth5G\enum,    		"1",        	0, %ChanWidth20M%
+HKR, Ndi\Params\PreferredChanWidth5G\enum,    		"0",        	0, %ChanWidthAuto%
+HKR, Ndi\Params\PreferredChanWidth5G,         		Default,    	0, "0"
+
+;[FTMMode.reg]
+;HKR, , DriverMode,    0x10001,  "1"
+
+[smpsDynamic.reg]
+HKR, Ndi\params\smpsDynamic,            ParamDesc,  0,  %smpsDynamic%
+HKR, Ndi\params\smpsDynamic,            Base,       0,  "10"
+HKR, Ndi\params\smpsDynamic,            default,    0,  "0"
+HKR, Ndi\params\smpsDynamic,            type,       0,  "enum"
+HKR, Ndi\params\smpsDynamic\enum,       "1",        0,  %Enable%
+HKR, Ndi\params\smpsDynamic\enum,       "0",        0,  %Disable%
+
+[MSI.reg]
+HKR, "Interrupt Management", ,0x00000010
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", ,0x00000010
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", MSISupported, 0x00010001, 1
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", MessageNumberLimit, 0x00010001, 16
+
+[MSI_8.reg]
+HKR, "Interrupt Management", ,0x00000010
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", ,0x00000010
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", MSISupported, 0x00010001, 1
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", MessageNumberLimit, 0x00010001, 8
+
+[roam.reg]
+HKR, , ftEnable, 0x00010001, 1
+
+[wmmac.reg]
+HKR, , wmmacEnable, 0x00010001, 1
+
+[wowEnable.reg]
+HKR, , wowEnable, 0x00010001, 1
+
+[wowWakePattern.reg]
+HKR, Ndi\Params\*WakeOnMagicPacket,          ParamDesc,  0, "WakeOnMagicPacket"
+HKR, Ndi\Params\*WakeOnMagicPacket,          Type,       0, "enum"
+HKR, Ndi\Params\*WakeOnMagicPacket,          Default,    0, "1"
+HKR, Ndi\params\*WakeOnMagicPacket\enum,     "1",        0, "Enable"
+HKR, Ndi\params\*WakeOnMagicPacket\enum,     "0",        0, "Disable"
+HKR, Ndi\Params\*WakeOnPattern,              ParamDesc,  0, "WakeOnPatternMatch"
+HKR, Ndi\Params\*WakeOnPattern,              Type,       0, "enum"
+HKR, Ndi\Params\*WakeOnPattern,              Default,    0, "1"
+HKR, Ndi\params\*WakeOnPattern\enum,         "1",        0, "Enable"
+HKR, Ndi\params\*WakeOnPattern\enum,         "0",        0, "Disable"
+
+;[enableWoWWLAN.reg]
+;HKLM, SYSTEM\CurrentControlSet\Services\NativeWifiP\Parameters, EnableWoWLAN, 0x00010001, 1
+
+[WakeOnMagicPacket.reg]
+HKR, NDI\params\*WakeOnMagicPacket,ParamDesc,,          "Wake On Magic Packet"
+HKR, NDI\params\*WakeOnMagicPacket,type,,               "enum"
+HKR, NDI\params\*WakeOnMagicPacket,Default,,            "1"
+HKR, NDI\params\*WakeOnMagicPacket\enum,0,,             "Disable"
+HKR, NDI\params\*WakeOnMagicPacket\enum,1,,             "Enable"
+
+[enableLegacyBurst.reg]
+HKR, , legacyburstenable, 0x00010001, 1
+
+[M3Needed.reg]
+HKR, , M3Needed, 0x00010001, 1
+
+[FileName.reg]
+HKR, , FWFileName, 0, %FWFileName%
+HKR, , BDFileName, 0, %BDFileName%
+
+[TxBf.reg]
+HKR, ,                                  TxBfeeEnable,                           0x00010001,  "1"
+
+[UseRegdmnfromFW.reg]
+HKR, , UseRegdmnfromFW, 0x00010001, 1
+
+[BandCapability.reg]
+HKR, , BandCapability, 0x00010001, 7
+
+[enableSmbios.reg]
+HKR, , SmUfCfgParaPolicy, 0x00010001, 1
+
+[enableHwRfKill.reg]
+HKR, , EnableHardwareRFKill, 0x00010001, 1
+
+[Enable6GcountryPolicy.reg]
+HKR, , Enable6GcountryPolicy, 0x00010001, 1
+
+[DisableReport6GAPtoOS.reg]
+HKR, , DisableReport6GAPtoOS, 0x00010001, 1
+
+[EnablePcieLinkRetry.Reg]
+HKR, , PcieLinkRetry, 0x00010001, 1
+
+[EnableMulticastFilter.reg]
+HKR, , enableMCFilter, 0x00010001, 2
+
+[enableDMAR.reg]
+HKR, , enableDMAR, 0x00010001, 1
+
+[P2PPassive_HO.reg]
+HKR, , p2pUsePassiveChan, 0x00010001, 3
+HKR, , p2pUseDFSChan, 0x00010001, 1
+
+[P2PPassive_LE.reg]
+HKR, , p2pUsePassiveChan, 0x00010001, 2
+
+[BD_NFA725_2_0.reg]
+HKR, , BDFileName, 0x00000000, "bdwlan_wcn685x_2p0_NFA725.elf"
+HKR, , EnableCustomizedRegdomain, 0x00010001, 3
+
+[BD_NFA765_2_0.reg]
+HKR, , BDFileName, 0x00000000, "bdwlan_wcn685x_2p0_NFA765.elf"
+HKR, , EnableCustomizedRegdomain, 0x00010001, 4
+
+[BD_NFA725_2_1.reg]
+HKR, , BDFileName, 0x00000000, "bdwlan_wcn685x_2p1_NFA725.elf"
+HKR, , EnableCustomizedRegdomain, 0x00010001, 3
+
+[BD_NFA765_2_1.reg]
+HKR, , BDFileName, 0x00000000, "bdwlan_wcn685x_2p1_NFA765.elf"
+HKR, , EnableCustomizedRegdomain, 0x00010001, 4
+
+[BD_SPL_NFA765_2_1_0268.reg]
+HKR, , BDFileName, 0x00000000, "bdwlan_wcn685x_2p1_nfa765_02681dac.elf"
+HKR, , EnableCustomizedRegdomain, 0x00010001, 4
+
+[BD_SPL_NFA765_2_1_1268.reg]
+HKR, , BDFileName, 0x00000000, "bdwlan_wcn685x_2p1_nfa765_12681dac.elf"
+HKR, , EnableCustomizedRegdomain, 0x00010001, 4
+
+[QcWlanFWFile.CopyFiles]
+wlanfw20.mbn,,,2
+m320.bin,,,2
+bdwlan.elf,,,2
+regdb.bin,,,2
+Data20.msc,,,2
+
+[QcWlan_BD_LITHIUM.CopyFiles]
+bdwlan01.e04,,,2
+bdwlan01.e05,,,2
+bdwlan01.e06,,,2
+bdwlan01.e08,,,2
+bdwlan01.e09,,,2
+bdwlan01.e0a,,,2
+bdwlan01g.e0a,,,2
+bdwlang.elf,,,2
+bdwlang.e8b,,,2
+bdwlan03g.e09,,,2
+
+[QcWlan_BD_NFA725_2_0.CopyFiles]
+bdwlan_wcn685x_2p0_NFA725.elf,,,2
+
+[QcWlan_BD_LE_NFA725_2_0.CopyFiles]
+bdwlan_wcn685x_2p0_NFA725_LE_NDA-M.elf,,,2
+bdwlan_wcn685x_2p0_NFA725_LE_NDA-P.elf,,,2
+
+[QcWlan_BD_NFA765_2_0.CopyFiles]
+bdwlan_wcn685x_2p0_NFA765.elf,,,2
+
+[QcWlan_BD_H_NFA765_2_0.CopyFiles]
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Dongqian.elf,,,2
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Lancia13.elf,,,2
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Lancia14.elf,,,2
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Lancia15.elf,,,2
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Peconic.elf,,,2
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Petrof.elf,,,2
+bdwlan_wcn685x_2p0_NFA765_H_P943C.elf,,,2
+
+[QcWlan_BD_HO_NFA765_2_0.CopyFiles]
+bdwlan_wcn685x_2p0_NFA765_HO_BNM.elf,,,2
+bdwlan_wcn685x_2p0_NFA765_HO_HalleyM_CN.elf,,,2
+
+[QcWlan_BD_NFA725_2_1.CopyFiles]
+bdwlan_wcn685x_2p1_NFA725.elf,,,2
+bdwlan_wcn685x_2p1_nfa725.elf.g,,,2
+
+[QcWlan_BD_LE_NFA725_2_1.CopyFiles]
+bdwlan_wcn685x_2p1_nfa725_LE.elf,,,2
+bdwlan_wcn685x_2p1_nfa725_LE.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA725_LE_NDA-M.elf,,,2
+bdwlan_wcn685x_2p1_nfa725_LE_NDA-M.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA725_LE_NDA-P.elf,,,2
+bdwlan_wcn685x_2p1_nfa725_LE_NDA-P.elf.g,,,2
+bdwlan_wcn685x_2p1_nfa725_LE_LFR-1.elf,,,2
+bdwlan_wcn685x_2p1_nfa725_LE_LFR-1.elf.g,,,2
+
+[QcWlan_BD_NFA765_2_1.CopyFiles]
+bdwlan_wcn685x_2p1_NFA765.elf,,,2
+bdwlan_wcn685x_2p1_NFA765.elf.g,,,2
+
+[QcWlan_BD_SPL_NFA765_2_1_0268.CopyFiles]
+bdwlan_wcn685x_2p1_nfa765_02681dac.elf,,,2
+bdwlan_wcn685x_2p1_nfa765_02681dac.elf.g,,,2
+
+[QcWlan_BD_SPL_NFA765_2_1_1268.CopyFiles]
+bdwlan_wcn685x_2p1_nfa765_12681dac.elf,,,2
+bdwlan_wcn685x_2p1_nfa765_12681dac.elf.g,,,2
+
+[QcWlan_BD_H_NFA765_2_1.CopyFiles]
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Dongqian.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia13.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia14.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia15.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Peconic.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Petrof.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_H_P943C.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Dongqian.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia13.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia14.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia15.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Peconic.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Petrof.elf.g,,,2
+bdwlan_wcn685x_2p1_nfa765_h_p943c.elf.g,,,2
+
+[QcWlan_BD_HO_NFA765_2_1.CopyFiles]
+bdwlan_wcn685x_2p1_NFA765_HO_HalleyM_CN.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HO_BNM.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HO_HalleyM_CN.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA765_HO_BNM.elf.g,,,2
+bdwlan_wcn685x_2p1_NFA765_HO_GLL.elf,,,2
+bdwlan_wcn685x_2p1_NFA765_HO_GLL.elf.g,,,2
+bdwlan_wcn685x_2p1_nfa765_HO_FB-H.elf,,,2
+bdwlan_wcn685x_2p1_nfa765_HO_FB-H.elf.g,,,2
+bdwlan_wcn685x_2p1_nfa765_HO_FB-I.elf,,,2
+bdwlan_wcn685x_2p1_nfa765_HO_FB-I.elf.g,,,2
+
+[QcWlan_BD_D_NFA765_2_1.CopyFiles]
+bdwlan_wcn685x_2p1_nfa765_DE_A15.elf,,,2
+bdwlan_wcn685x_2p1_nfa765_DE_A15.elf.g,,,2
+bdwlan_wcn685x_2p1_nfa765_DE_S12.elf,,,2
+bdwlan_wcn685x_2p1_nfa765_DE_S12.elf.g,,,2
+bdwlan_wcn685x_2p1_nfa765_DE_M10.elf,,,2
+bdwlan_wcn685x_2p1_nfa765_DE_M10.elf.g,,,2
+
+[QcWlan_BD_AC_NFA765_2_1.CopyFiles]
+bdwlan_wcn685x_2p1_nfa765_AC_Jimny.elf,,,2
+bdwlan_wcn685x_2p1_nfa765_AC_Jimny.elf.g,,,2
+
+[QcWlan.Service]
+DisplayName     = %QcWlan.Service.DispName%
+ServiceType     = 1         ;SERVICE_KERNEL_DRIVER
+StartType       = 3         ;SERVICE_DEMAND_START
+ErrorControl    = 1         ;SERVICE_ERROR_NORMAL
+ServiceBinary   = %12%\qcwlan64.sys
+LoadOrderGroup  = NDIS
+
+[QcWlan_DMAr.Service]
+DisplayName     = %QcWlan.Service.DispName%
+ServiceType     = 1         ;SERVICE_KERNEL_DRIVER
+StartType       = 3         ;SERVICE_DEMAND_START
+ErrorControl    = 1         ;SERVICE_ERROR_NORMAL
+ServiceBinary   = %12%\qcwlan64.sys
+LoadOrderGroup  = NDIS
+AddReg          = QcWlan_DMAr.Service.AddReg
+
+[QcWlan_DMAr.Service.AddReg]
+HKR,Parameters,DmaRemappingCompatible,0x00010001,1
+
+[QcWlan.EventLog]
+AddReg = QcWlan.AddEventLog.reg
+
+[QcWlan.AddEventLog.reg]
+HKR, , EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\netevent.dll"
+HKR, , TypesSupported,   0x00010001, 7
+
+[QcWlan.CopyFiles]
+qcwlan64.sys,,,2
+
+;;;
+
+[SourceDisksNames]
+1 = %DiskDescription%,,,
+
+[SourceDisksFiles]
+qcwlan64.sys                         = 1,,
+wlanfw20.mbn                         = 1,,
+m320.bin                             = 1,,
+bdwlan.elf                           = 1,,
+bdwlan01.e04                         = 1,,
+bdwlan01.e05                         = 1,,
+bdwlan01.e06                         = 1,,
+bdwlan01.e08                         = 1,,
+bdwlan01.e09                         = 1,,
+bdwlan01.e0a                         = 1,,
+bdwlan01g.e0a                        = 1,,
+bdwlang.elf                          = 1,,
+bdwlang.e8b                          = 1,,
+bdwlan03g.e09                        = 1,,
+regdb.bin                            = 1,,
+Data20.msc                           = 1,,
+bdwlan_wcn685x_2p0_NFA725.elf        = 1,,
+bdwlan_wcn685x_2p0_NFA725_LE_NDA-M.elf        = 1,,
+bdwlan_wcn685x_2p0_NFA725_LE_NDA-P.elf        = 1,,
+bdwlan_wcn685x_2p0_NFA765.elf        = 1,,
+bdwlan_wcn685x_2p1_NFA725.elf        = 1,,
+bdwlan_wcn685x_2p1_NFA725.elf.g        = 1,,
+bdwlan_wcn685x_2p1_nfa725_LE.elf        = 1,,
+bdwlan_wcn685x_2p1_nfa725_LE.elf.g        = 1,,
+bdwlan_wcn685x_2p1_NFA725_LE_NDA-M.elf        = 1,,
+bdwlan_wcn685x_2p1_nfa725_LE_NDA-M.elf.g        = 1,,
+bdwlan_wcn685x_2p1_NFA725_LE_NDA-P.elf        = 1,,
+bdwlan_wcn685x_2p1_nfa725_LE_NDA-P.elf.g        = 1,,
+bdwlan_wcn685x_2p1_nfa725_LE_LFR-1.elf        = 1,,
+bdwlan_wcn685x_2p1_nfa725_LE_LFR-1.elf.g        = 1,,
+bdwlan_wcn685x_2p1_NFA765.elf        = 1,,
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Dongqian.elf        = 1,,
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Lancia13.elf        = 1,,
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Lancia14.elf        = 1,,
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Lancia15.elf        = 1,,
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Peconic.elf         = 1,,
+bdwlan_wcn685x_2p0_NFA765_HP_G8_Petrof.elf          = 1,,
+bdwlan_wcn685x_2p0_NFA765_H_P943C.elf          = 1,,
+bdwlan_wcn685x_2p0_NFA765_HO_HalleyM_CN.elf    = 1,,
+bdwlan_wcn685x_2p0_NFA765_HO_BNM.elf           = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Dongqian.elf   = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia13.elf   = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia14.elf   = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia15.elf   = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Peconic.elf    = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Petrof.elf     = 1,,
+bdwlan_wcn685x_2p1_NFA765_H_P943C.elf          = 1,,
+bdwlan_wcn685x_2p1_NFA765.elf.g                = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Dongqian.elf.g = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia13.elf.g = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia14.elf.g = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Lancia15.elf.g = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Peconic.elf.g  = 1,,
+bdwlan_wcn685x_2p1_NFA765_HP_G8_Petrof.elf.g   = 1,,
+bdwlan_wcn685x_2p1_nfa765_h_p943c.elf.g        = 1,,
+bdwlan_wcn685x_2p1_NFA765_HO_HalleyM_CN.elf    = 1,,
+bdwlan_wcn685x_2p1_NFA765_HO_BNM.elf           = 1,,
+bdwlan_wcn685x_2p1_NFA765_HO_HalleyM_CN.elf.g  = 1,,
+bdwlan_wcn685x_2p1_NFA765_HO_BNM.elf.g         = 1,,
+bdwlan_wcn685x_2p1_NFA765_HO_GLL.elf           = 1,,
+bdwlan_wcn685x_2p1_NFA765_HO_GLL.elf.g         = 1,,
+bdwlan_wcn685x_2p1_nfa765_HO_FB-H.elf          = 1,,
+bdwlan_wcn685x_2p1_nfa765_HO_FB-H.elf.g        = 1,,
+bdwlan_wcn685x_2p1_nfa765_HO_FB-I.elf          = 1,,
+bdwlan_wcn685x_2p1_nfa765_HO_FB-I.elf.g        = 1,,
+bdwlan_wcn685x_2p1_nfa765_DE_A15.elf           = 1,,
+bdwlan_wcn685x_2p1_nfa765_DE_A15.elf.g         = 1,,
+bdwlan_wcn685x_2p1_nfa765_DE_S12.elf           = 1,,
+bdwlan_wcn685x_2p1_nfa765_DE_S12.elf.g         = 1,,
+bdwlan_wcn685x_2p1_nfa765_DE_M10.elf           = 1,,
+bdwlan_wcn685x_2p1_nfa765_DE_M10.elf.g         = 1,,
+bdwlan_wcn685x_2p1_nfa765_AC_Jimny.elf         = 1,,
+bdwlan_wcn685x_2p1_nfa765_AC_Jimny.elf.g       = 1,,
+bdwlan_wcn685x_2p1_nfa765_02681dac.elf         = 1,,
+bdwlan_wcn685x_2p1_nfa765_02681dac.elf.g         = 1,,
+bdwlan_wcn685x_2p1_nfa765_12681dac.elf         = 1,,
+bdwlan_wcn685x_2p1_nfa765_12681dac.elf.g         = 1,,
+
+[DestinationDirs]
+QcWlan.CopyFiles                  = 12
+QcWlanFWFile.CopyFiles            = 12
+QcWlan_BD_LITHIUM.CopyFiles       = 12
+QcWlan_BD_NFA725_2_0.CopyFiles 	  = 12
+QcWlan_BD_LE_NFA725_2_0.CopyFiles 	  = 12
+QcWlan_BD_NFA765_2_0.CopyFiles 	  = 12
+QcWlan_BD_H_NFA765_2_0.CopyFiles  = 12
+QcWlan_BD_HO_NFA765_2_0.CopyFiles = 12
+QcWlan_BD_NFA725_2_1.CopyFiles 	  = 12
+QcWlan_BD_LE_NFA725_2_1.CopyFiles 	  = 12
+QcWlan_BD_NFA765_2_1.CopyFiles 	  = 12
+QcWlan_BD_H_NFA765_2_1.CopyFiles  = 12
+QcWlan_BD_HO_NFA765_2_1.CopyFiles  = 12
+QcWlan_BD_D_NFA765_2_1.CopyFiles  = 12
+QcWlan_BD_AC_NFA765_2_1.CopyFiles = 12
+QcWlan_BD_SPL_NFA765_2_1_0268.CopyFiles = 12
+QcWlan_BD_SPL_NFA765_2_1_1268.CopyFiles = 12
+DefaultDestDir                    = 12
+
+[Strings]
+Msft                         = "Microsoft"
+QUALCOMM                     = "Qualcomm Communications Inc."
+QcWlan.Service.DispName      = "Qualcomm Extensible Wireless LAN 11AX Device Driver"
+DiskDescription              = "Qualcomm Sample Driver Disk 1"
+Enable                       = "Enable"
+Disable                      = "Disable"
+RoamAggressive               = "Roaming aggressiveness"
+RssiLowest                   = "1.Lowest"
+RssiMedium-low               = "2.Medium-low"   
+RssiMedium                   = "3.Medium"
+RssiMedium-high              = "4.Medium-high"
+RssiHighest                  = "5.Highest"
+NetworkAddress               = "Network Address"
+bkScanEnable                 = "BackgroundScan On/Off"
+radioEnable                  = "Radio On/Off"
+smpsDynamic                  = "Dynamic MIMO Power Save"
+FWFileName                   = "wlanfw.mbn"
+BDFileName                   = "bdwlan.elf"
+QcWlan.DeviceDesc.685x       = "Qualcomm QCA206x Wi-Fi 6E Dual Band Simultaneous (DBS) Network Adapter"
+QcWlan.DeviceDesc.685x_h     = "Qualcomm FastConnect 6900 Wi-Fi 6E Dual Band Simultaneous (DBS) Network Adapter"
+PreferredBand                = "Preferred Band"
+Preferred6GBand              = "6Ghz Band Preferred"
+Preferred5GBand              = "5Ghz Band Preferred"
+Preferred2GBand              = "2.4Ghz Band Preferred"
+PreferredBandNone            = "No Preference (default)"
+WirelessMode                 = "Wireless Mode"
+11a/b/g/n/ac/ax              = "13 - 11a/b/g/n/ac/ax (default)"
+11a/n/ac/ax           		 = "12 - 11a/n/ac/ax"
+11a/n/ac                     = "11 - 11a/n/ac"
+11a/n                        = "10 - 11a/n"
+11b/g/n/ax                   = "09 - 11b/g/n/ax"
+11b/g/n                      = "08 - 11b/g/n"
+11b/g                        = "07 - 11b/g"
+11ax                         = "06 - 11ax"
+11ac                         = "05 - 11ac"
+11n                          = "04 - 11n"
+11g                          = "03 - 11g"
+11b                          = "02 - 11b"
+11a                          = "01 - 11a"
+Preferred2GChanWidth         = "2.4GHz channel bandwidth"
+Preferred5GChanWidth         = "5GHz channel bandwidth"
+ChanWidth20M                 = "20MHz only"
+ChanWidthAuto                = "Auto"
