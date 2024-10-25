@@ -5,14 +5,14 @@ WinDeckHelper - Утилита, которая автоматически уст
 
 На создание проекта вдохновил  [CelesteHeartsong / SteamDeckAutomatedInstall](https://github.com/CelesteHeartsong/SteamDeckAutomatedInstall)
 
-![image](https://user-images.githubusercontent.com/118720241/226396001-7107bcf0-e007-4eec-bb07-d5abb8c26141.png)
+![WinDeckHelper-2 3](https://github.com/user-attachments/assets/8f40b580-5e02-4c80-b6b8-395f52954d78)
 
-[Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/tag/v.2.2)
+[Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.3)
 
 ## Как Установить
-- Для Windows 10 драйвер Wifi нужно установить вручную. Скачать его можно с официального Valve [сайта](https://steamdeck-packages.steamos.cloud/misc/windows/drivers/RTLWlanE_WindowsDriver_2024.0.10.137_Drv_3.00.0039_Win11.L.zip)
-- Подключитесь к интернету
-- Скачать WinDeckHelper.exe [здесь](https://github.com/anejolov/WinDeckHelper/releases/tag/v.2.2) и запустить от имени Администратора.
+- Запустить WinDeckHelper.exe от имени Администратора
+- Выбрать версию Steam Deck LCD/OLED
+- Если Wi-Fi драйвера нет по умолчанию, то ставим его нажав на кнопку [Уст. Wi-Fi драйвер]
 - Выбрать, что будем ставить и нажимаем СТАРТ.
 - Перезагрузить систему после окончания процесса.
 
@@ -23,6 +23,7 @@ WinDeckHelper - Утилита, которая автоматически уст
 
 ## Возможные Проблемы
 - Windows Защитник(Defender) определяет WinDeckHelper как вирус. Отключайте его по возможности.
+- Custom Resolution Utility скрыт для OLED, т.к у меня нет профиля cru для неё еще.
 - Если "Custom Resolution Utility" окно не исчезло автоматически:
   - Нажмите "import" кнопку и выберите "cru-steamdeck.bin" из папки "Загрузки" и нажмите "ОК"
 - Если "EqualizerAPO" окно не исчезло автоматически:
