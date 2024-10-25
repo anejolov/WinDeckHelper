@@ -6,14 +6,16 @@ WinDeckHelper - Utilities installer and tweaker for your Windows Steam Deck.
 
 Project inspired by [CelesteHeartsong / SteamDeckAutomatedInstall](https://github.com/CelesteHeartsong/SteamDeckAutomatedInstall)
 
-![image](https://user-images.githubusercontent.com/118720241/226356093-3b5ec745-0901-4a1f-8951-f1b70d81feea.png)
+![WinDeckHelper-2 3_eng](https://github.com/user-attachments/assets/cf92a494-a93b-41a8-836b-760306b60d39)
 
-[Download latest version here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.2)
+[Download latest version here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.3)
+
 
 ## How To Install
-- For Windows 10 you have to install Wifi driver manually. You can download it from valve [site](https://steamdeck-packages.steamos.cloud/misc/windows/drivers/RTLWlanE_WindowsDriver_2024.0.10.137_Drv_3.00.0039_Win11.L.zip)
+- Open WinDeckHelper.exe as Administrator
+- Select Steam Deck version LCD/OLED
+- If Wi-Fi driver is not installed by default, install it by clicking on [Install WI-FI Driver]
 - Connect to the internet
-- Download WinDeckHelper.exe from [here](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.2) and run it as Administrator.
 - Choose the stuff you need and click on START.
 - Reboot the system after the process is finished.
 
@@ -24,6 +26,7 @@ Project inspired by [CelesteHeartsong / SteamDeckAutomatedInstall](https://githu
 
 ## Potential Issues
 - Windows Defender defines WinDeckHelper as a virus. Please disable Defender if possible.
+- Custom Resolution Utility is disabled for OLED, because I have no cru profile for OLED version
 - If "Custom Resolution Utility" window does not disappear:
   - Please click on "import" button, select "cru-steamdeck.bin" file from "Downloads" folder and click "OK"
 - If "EqualizerAPO" window does not disappear:
