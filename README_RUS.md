@@ -7,7 +7,7 @@ WinDeckHelper - Утилита, которая автоматически уст
 
 ![WinDeckHelper-2 3](https://github.com/user-attachments/assets/8f40b580-5e02-4c80-b6b8-395f52954d78)
 
-[Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.3)
+[Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.3.1)
 
 ## Как Установить
 - Запустить WinDeckHelper.exe от имени Администратора
