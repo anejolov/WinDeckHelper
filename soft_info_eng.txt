@@ -11,4 +11,4 @@ Software you may need for Windows Steam Deck.
 - File archiver.
 
 [ ShareX screenshot tool ]
-- Powerful screenshot tool. It can capture or record your screen and upload them to over 80 destinations.
+- Powerful screenshot tool. It can capture or record your screen and upload them to over 80 destinations. 
