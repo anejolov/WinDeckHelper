@@ -37,8 +37,16 @@ jobs:
         Icon=$iconPath
         "@
         Set-Content -Path "sfxconfig.txt" -Value $sfxConfig
-        & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfxconfig.txt" -ep1 $archiveName $sourceFiles
+        & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -iicon"$iconPath" -z"sfxconfig.txt" -ep1 $archiveName $sourceFiles
         Remove-Item -Path "sfxconfig.txt"
+
+    - name: Verify installer creation
+      run: |
+        $archiveName = "WindeckHelper.exe"
+        if (-Not (Test-Path -Path $archiveName)) {
+          Write-Error "Установщик не создан!"
+          exit 1
+        }
 
     - name: Upload artifact (for push or PR)
       if: github.event_name == 'push' || github.event_name == 'pull_request'
@@ -46,6 +54,7 @@ jobs:
       with:
         name: WindeckHelper.exe
         path: WindeckHelper.exe
+        archive: false # Отключает архивирование в ZIP
 
   release:
     runs-on: ubuntu-latest
