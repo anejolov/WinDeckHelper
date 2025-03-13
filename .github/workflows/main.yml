@@ -14,15 +14,16 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Install WinRAR via Chocolatey
+    - name: Install WinRAR
       run: |
         choco install winrar -y
 
     - name: Create self-extracting archive with WinRAR
       run: |
         $archiveName = "WindeckHelper.exe"
+        $sourceFiles = Get-ChildItem -Path . -Recurse -Exclude .git, .github | ForEach-Object { $_.FullName }
         $sfxConfig = @"
         Path=%TEMP%\Windeckhelper
         Silent=1
@@ -33,14 +34,14 @@ jobs:
         Icon=Windeckicon.ico
         "@
         Set-Content -Path "sfxconfig.txt" -Value $sfxConfig
-        & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $archiveName *
+        & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $archiveName $sourceFiles
         Remove-Item -Path "sfxconfig.txt"
 
     - name: Upload artifact (for push or PR)
       if: github.event_name == 'push' || github.event_name == 'pull_request'
       uses: actions/upload-artifact@v4
       with:
-        name: WindeckHelper
+        name: WindeckHelper.exe
         path: WindeckHelper.exe
 
   release:
@@ -50,7 +51,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Get next version
       id: version
