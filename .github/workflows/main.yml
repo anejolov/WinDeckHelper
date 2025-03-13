@@ -36,6 +36,9 @@ jobs:
 
           $exeName = "WindeckHelper_${{ github.event.release.tag_name }}.exe"
           $exePath = "C:\path\to\your\directory\$exeName"  # Полный путь к .exe файлу
+          
+          Write-Host "Creating EXE at $exePath"  # Логирование пути
+          
           & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $exePath *
           
           echo "EXE_NAME=$exePath" >> $GITHUB_ENV
@@ -44,6 +47,7 @@ jobs:
 
       - name: Verify EXE exists
         run: |
+          Write-Host "Checking if EXE exists at: ${{ env.EXE_NAME }}"  # Логирование перед проверкой
           if (Test-Path "${{ env.EXE_NAME }}") {
             Write-Host "EXE file found: ${{ env.EXE_NAME }}"
           } else {
