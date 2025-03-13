@@ -39,9 +39,10 @@ jobs:
           echo "EXE_NAME=$exeName" >> $GITHUB_ENV
         shell: powershell
 
-      - name: Upload EXE to Release
+      - name: Upload EXE to Release Assets
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ env.EXE_NAME }}
+          tag_name: ${{ github.event.release.tag_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
