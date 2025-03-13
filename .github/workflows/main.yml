@@ -63,6 +63,10 @@ jobs:
         echo "Next version: $VERSION"
         echo "::set-output name=version::$VERSION"
 
+    - name: Rename archive to include version
+      run: |
+        mv WindeckHelper.exe "WindeckHelper-${{ steps.version.outputs.version }}.exe"
+
     - name: Create release
       id: create_release
       uses: actions/create-release@v1
@@ -82,4 +86,14 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: WindeckHelper.exe
         asset_name: WindeckHelper.exe
+        asset_content_type: application/octet-stream
+
+    - name: Upload release asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: WindeckHelper-${{ steps.version.outputs.version }}.exe
+        asset_name: WindeckHelper-${{ steps.version.outputs.version }}.exe
         asset_content_type: application/octet-stream
