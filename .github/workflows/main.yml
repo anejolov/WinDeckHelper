@@ -43,6 +43,7 @@ jobs:
       with:
         name: WindeckHelper.exe
         path: WindeckHelper.exe
+        archive: false
 
   release:
     runs-on: ubuntu-latest
