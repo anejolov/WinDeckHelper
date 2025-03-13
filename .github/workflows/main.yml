@@ -1,161 +1,99 @@
-name: Build and Deploy
-
-on:
-  workflow_dispatch: # Ручной запуск
-  push:
-    branches:
-      - main # Запуск при пуше в ветку main
-  pull_request:
-    types: [opened, synchronize] # Запуск при создании или обновлении PR
+name: Add EXE to Release Assets
+'on':
   release:
-    types: [published] # Запуск при создании релиза вручную через интерфейс GitHub
+    types:
+      - published
+    jobs:
+      build:
+        runs-on: windows-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+          - name: Install WinRAR
+            run: |
+              echo "WinRAR installation check."
+              if (!(Get-Command rar)) {
+                Write-Error "WinRAR not found. Ensure it is installed and in the PATH."
+                exit 1
+              }
+          - name: Create Windeckhelper directory
+            run: mkdir %TEMP%\Windeckhelper
+          - name: Copy files to archive
+            run: |
+              Copy-Item *.ps1 %TEMP%\Windeckhelper\
+              Copy-Item *.txt %TEMP%\Windeckhelper\
+          - name: Create SFX archive
+            run: >
+              $archiveName = "Windeckhelper.exe"
 
-env:
-  BASE_FILE_NAME: WindeckHelper.exe # Базовое имя файла
+              $sfxIcon = "icon.ico"
 
-jobs:
-  build:
-    runs-on: windows-latest
+              $scriptPath = "%TEMP%\Windeckhelper\Windeckhelper.ps1"
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+              $tempList = "%TEMP%\filelist.txt"
 
-    - name: Install WinRAR
-      run: |
-        choco install winrar -y
+              Get-ChildItem %TEMP%\Windeckhelper\* | ForEach-Object
+              {$_.FullName} | Out-File $tempList
 
-    - name: Create self-extracting archive with WinRAR
-      id: create_archive
-      run: |
-        $archiveName = "${{ env.BASE_FILE_NAME }}"
-        $sourceFiles = Get-ChildItem -Path . -Recurse -Exclude .git, .github | ForEach-Object { $_.FullName }
-        $iconPath = Resolve-Path -Path "Windeckicon.ico" # Полный путь к иконке
-        $sfxConfig = @"
-        Path=%TEMP%\Windeckhelper
-        Silent=1
-        Overwrite=1
-        Setup=PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& .\Windeckhelper.ps1"
-        TempMode=1
-        Title=WindeckHelper Installer
-        Icon=$iconPath
-        "@
-        Set-Content -Path "sfxconfig.txt" -Value $sfxConfig
-        & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfxconfig.txt" -ep1 $archiveName $sourceFiles
-        Remove-Item -Path "sfxconfig.txt"
-        echo "archiveName=$archiveName" >> $env:GITHUB_OUTPUT # Передаём имя файла в outputs
+              $command = "rar a -sfx -zrar.txt -r $archiveName @$tempList"
 
-    - name: Verify installer creation
-      run: |
-        $archiveName = "${{ steps.create_archive.outputs.archiveName }}"
-        if (-Not (Test-Path -Path $archiveName)) {
-          Write-Error "Установщик не создан!"
-          exit 1
-        }
+              Invoke-Expression $command
 
-    - name: Upload artifact (for push or PR)
-      if: github.event_name == 'push' || github.event_name == 'pull_request'
-      uses: actions/upload-artifact@v4
-      with:
-        name: WindeckHelper
-        path: ${{ steps.create_archive.outputs.archiveName }}
+              Remove-Item $tempList
+            env:
+              RAR_PATH: 'C:\Program Files\WinRAR\rar.exe'
+          - name: Create rar.txt for SFX options
+            run: >
+              $exeName = "Windeckhelper-${{ github.event.release.tag_name
+              }}.exe"
 
-    - name: Upload artifact for release
-      if: github.event_name == 'workflow_dispatch' || github.event_name == 'release'
-      uses: actions/upload-artifact@v4
-      with:
-        name: WindeckHelper
-        path: ${{ steps.create_archive.outputs.archiveName }}
+              $rarTxt = @"
 
-  release:
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'release' # Только для ручного запуска или создания релиза
+              Path=%TEMP%\Windeckhelper
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+              Setup=PowerShell -NoProfile -ExecutionPolicy Bypass -Command "&
+              .\Windeckhelper.ps1"
 
-    - name: Download artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: WindeckHelper
-        path: .
+              Silent=1
 
-    - name: Get release version
-      id: get_version
-      run: |
-        if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-          # Если workflow запущен вручную, создаём новую версию
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
-          VERSION=$(echo $LATEST_TAG | awk -F. '{printf "%d.%d.%d", $1, $2, $3+1}')
-        else
-          # Если релиз создан вручную через интерфейс GitHub, используем его версию
-          VERSION="${{ github.event.release.tag_name }}"
-        fi
-        echo "Version: $VERSION"
-        echo "::set-output name=version::$VERSION"
+              Overwrite=1
 
-    - name: Rename archive to include version
-      id: rename_archive
-      run: |
-        baseName="${{ env.BASE_FILE_NAME }}"
-        version="${{ steps.get_version.outputs.version }}"
-        newName="${baseName%.exe}-${version}.exe"
-        if [[ ! -f "$baseName" ]]; then
-          echo "Файл $baseName не найден!"
-          exit 1
-        fi
-        mv "$baseName" "$newName"
-        echo "Release file name: $newName"
-        echo "::set-output name=newName::$newName" # Передаём новое имя файла в outputs
+              Title=$exeName
 
-    - name: Verify renamed file exists
-      run: |
-        newName="${{ steps.rename_archive.outputs.newName }}"
-        if [[ ! -f "$newName" ]]; then
-          echo "Файл $newName не найден после переименования!"
-          exit 1
-        fi
+              Icon=$Env:GITHUB_WORKSPACE\icon.ico
 
-    - name: Create release (only for workflow_dispatch)
-      if: github.event_name == 'workflow_dispatch'
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ steps.get_version.outputs.version }}
-        release_name: Release ${{ steps.get_version.outputs.version }}
-        draft: false
-        prerelease: false
+              AdminAccess=1
 
-    - name: Verify file exists before uploading asset
-      run: |
-        newName="${{ steps.rename_archive.outputs.newName }}"
-        if [[ ! -f "$newName" ]]; then
-          echo "Файл $newName не найден перед загрузкой ассета!"
-          exit 1
-        fi
+              "@
 
-    - name: Upload release asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ github.event.release.upload_url || steps.create_release.outputs.upload_url }}
-        asset_path: ${{ steps.rename_archive.outputs.newName }}
-        asset_name: ${{ steps.rename_archive.outputs.newName }}
-        asset_content_type: application/octet-stream
+              $rarTxt | Out-File rar.txt
 
-    - name: Cleanup release and tag if file does not exist
-      if: failure() && github.event_name == 'workflow_dispatch'
-      run: |
-        version="${{ steps.get_version.outputs.version }}"
-        if [[ -n "$version" ]]; then
-          echo "Удаление релиза и тега $version..."
-          gh release delete "$version" --yes
-          git push origin --delete "$version"
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              Rename-Item Windeckhelper.exe $exeName
+          - name: Upload EXE to Release Assets
+            uses: actions/github-script@v6
+            with:
+              script: |
+                const fs = require('fs').promises;
+                const github = context.github;
+                const context = github.context;
+                const tagName = '${{ github.event.release.tag_name }}';
+                const exeName = `Windeckhelper-${tagName}.exe`;
+                const exePath = `./${exeName}`;
+                try {
+                  const release = await github.rest.repos.getReleaseByTag({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    tag: tagName,
+                  });
+                  const data = await fs.readFile(exePath);
+                  await github.rest.repos.uploadReleaseAsset({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    release_id: release.data.id,
+                    name: exeName,
+                    data: data,
+                  });
+                  console.log(`EXE ${exeName} uploaded to release ${tagName}`);
+                } catch (error) {
+                  console.error('Error uploading EXE:', error);
+                }
