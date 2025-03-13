@@ -1,8 +1,9 @@
-name: Build SFX EXE on Release
+name: Build SFX EXE on Push
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -18,7 +19,7 @@ jobs:
         shell: powershell
 
       - name: Get Release Version
-        run: echo "RELEASE_VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+        run: echo "RELEASE_VERSION=latest" >> $GITHUB_ENV
         shell: bash
 
       - name: Create SFX archive
@@ -34,14 +35,27 @@ jobs:
           "@
           Set-Content -Path "sfx_config.txt" -Value $SFXConfig
 
-          $exeName = "WindeckHelper_${{ env.RELEASE_VERSION }}.exe"
+          $exeName = "WindeckHelper_${{ github.sha }}.exe"
           & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $exeName *
+          
           echo "EXE_NAME=$exeName" >> $GITHUB_ENV
+          Write-Host "EXE file created at $exeName"
         shell: powershell
 
-      - name: Upload EXE to Release
+      - name: Verify EXE exists
+        run: |
+          if (Test-Path ${{ env.EXE_NAME }}) {
+            Write-Host "EXE file found: ${{ env.EXE_NAME }}"
+          } else {
+            Write-Host "EXE file not found!"
+            exit 1
+          }
+        shell: powershell
+
+      - name: Upload EXE to Release Assets
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ env.EXE_NAME }}
+          tag_name: ${{ github.sha }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
