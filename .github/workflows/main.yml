@@ -7,6 +7,8 @@ on:
       - main # Запуск при пуше в ветку main
   pull_request:
     types: [opened, synchronize] # Запуск при создании или обновлении PR
+  release:
+    types: [published] # Запуск при создании релиза вручную через интерфейс GitHub
 
 jobs:
   build:
@@ -24,7 +26,7 @@ jobs:
       run: |
         $archiveName = "WindeckHelper.exe"
         $sourceFiles = Get-ChildItem -Path . -Recurse -Exclude .git, .github | ForEach-Object { $_.FullName }
-        $iconPath = Resolve-Path -Path "Windeckicon.ico"
+        $iconPath = Resolve-Path -Path "Windeckicon.ico" # Полный путь к иконке
         $sfxConfig = @"
         Path=%TEMP%\Windeckhelper
         Silent=1
@@ -44,37 +46,44 @@ jobs:
       with:
         name: WindeckHelper.exe
         path: WindeckHelper.exe
-        retention-days: 5
+        archive: false # Отключает архивирование в ZIP
 
   release:
     runs-on: ubuntu-latest
     needs: build
-    if: github.event_name == 'workflow_dispatch' # Только для ручного запуска
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'release' # Только для ручного запуска или создания релиза
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Get next version
-      id: version
+    - name: Get release version
+      id: get_version
       run: |
-        LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
-        VERSION=$(echo $LATEST_TAG | awk -F. '{printf "v%d.%d.%d", $1, $2, $3+1}')
-        echo "Next version: $VERSION"
+        if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+          # Если workflow запущен вручную, создаём новую версию
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          VERSION=$(echo $LATEST_TAG | awk -F. '{printf "v%d.%d.%d", $1, $2, $3+1}')
+        else
+          # Если релиз создан вручную через интерфейс GitHub, используем его версию
+          VERSION="${{ github.event.release.tag_name }}"
+        fi
+        echo "Version: $VERSION"
         echo "::set-output name=version::$VERSION"
 
     - name: Rename archive to include version
       run: |
-        mv WindeckHelper.exe "WindeckHelper-${{ steps.version.outputs.version }}.exe"
+        mv WindeckHelper.exe "WindeckHelper-${{ steps.get_version.outputs.version }}.exe"
 
-    - name: Create release
+    - name: Create release (only for workflow_dispatch)
+      if: github.event_name == 'workflow_dispatch'
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.version.outputs.version }}
-        release_name: Release ${{ steps.version.outputs.version }}
+        tag_name: ${{ steps.get_version.outputs.version }}
+        release_name: Release ${{ steps.get_version.outputs.version }}
         draft: false
         prerelease: false
 
@@ -83,17 +92,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: WindeckHelper.exe
-        asset_name: WindeckHelper.exe
-        asset_content_type: application/octet-stream
-
-    - name: Upload release asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: WindeckHelper-${{ steps.version.outputs.version }}.exe
-        asset_name: WindeckHelper-${{ steps.version.outputs.version }}.exe
+        upload_url: ${{ github.event.release.upload_url || steps.create_release.outputs.upload_url }}
+        asset_path: WindeckHelper-${{ steps.get_version.outputs.version }}.exe
+        asset_name: WindeckHelper-${{ steps.get_version.outputs.version }}.exe
         asset_content_type: application/octet-stream
