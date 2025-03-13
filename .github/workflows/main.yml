@@ -41,7 +41,7 @@ jobs:
 
     - name: Upload artifact (for push or PR)
       if: github.event_name == 'push' || github.event_name == 'pull_request'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: WindeckHelper
         path: WindeckHelper.exe
