@@ -60,6 +60,13 @@ jobs:
         name: WindeckHelper
         path: ${{ steps.create_archive.outputs.archiveName }}
 
+    - name: Upload artifact for release
+      if: github.event_name == 'workflow_dispatch' || github.event_name == 'release'
+      uses: actions/upload-artifact@v4
+      with:
+        name: WindeckHelper
+        path: ${{ steps.create_archive.outputs.archiveName }}
+
   release:
     runs-on: ubuntu-latest
     needs: build
@@ -68,6 +75,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: WindeckHelper
+        path: .
 
     - name: Get release version
       id: get_version
@@ -84,8 +97,9 @@ jobs:
         echo "::set-output name=version::$VERSION"
 
     - name: Rename archive to include version
+      id: rename_archive
       run: |
-        baseName="${{ needs.build.outputs.archiveName }}"
+        baseName="${{ env.BASE_FILE_NAME }}"
         version="${{ steps.get_version.outputs.version }}"
         newName="${baseName%.exe}-${version}.exe"
         mv "$baseName" "$newName"
