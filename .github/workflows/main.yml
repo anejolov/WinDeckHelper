@@ -54,7 +54,6 @@ jobs:
       with:
         name: WindeckHelper.exe
         path: WindeckHelper.exe
-        archive: false # Отключает архивирование в ZIP
 
   release:
     runs-on: ubuntu-latest
