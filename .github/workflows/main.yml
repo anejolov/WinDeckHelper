@@ -87,8 +87,8 @@ jobs:
       run: |
         if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
           # Если workflow запущен вручную, создаём новую версию
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
-          VERSION=$(echo $LATEST_TAG | awk -F. '{printf "v%d.%d.%d", $1, $2, $3+1}')
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
+          VERSION=$(echo $LATEST_TAG | awk -F. '{printf "%d.%d.%d", $1, $2, $3+1}')
         else
           # Если релиз создан вручную через интерфейс GitHub, используем его версию
           VERSION="${{ github.event.release.tag_name }}"
@@ -107,7 +107,8 @@ jobs:
           exit 1
         fi
         mv "$baseName" "$newName"
-        echo "newName=$newName" >> $env:GITHUB_OUTPUT # Передаём новое имя файла в outputs
+        echo "Release file name: $newName"
+        echo "::set-output name=newName::$newName" # Передаём новое имя файла в outputs
 
     - name: Verify renamed file exists
       run: |
@@ -146,3 +147,15 @@ jobs:
         asset_path: ${{ steps.rename_archive.outputs.newName }}
         asset_name: ${{ steps.rename_archive.outputs.newName }}
         asset_content_type: application/octet-stream
+
+    - name: Cleanup release and tag if file does not exist
+      if: failure() && github.event_name == 'workflow_dispatch'
+      run: |
+        version="${{ steps.get_version.outputs.version }}"
+        if [[ -n "$version" ]]; then
+          echo "Удаление релиза и тега $version..."
+          gh release delete "$version" --yes
+          git push origin --delete "$version"
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
