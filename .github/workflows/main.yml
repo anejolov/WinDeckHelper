@@ -47,7 +47,7 @@ jobs:
 
       - name: Verify EXE exists
         run: |
-          Write-Host "Checking if EXE exists at: ${{ env.EXE_NAME }}"  # Логирование перед проверкой
+          Write-Host "EXE file path to check: ${{ env.EXE_NAME }}"  # Логирование пути перед проверкой
           if (Test-Path "${{ env.EXE_NAME }}") {
             Write-Host "EXE file found: ${{ env.EXE_NAME }}"
           } else {
