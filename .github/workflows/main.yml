@@ -34,7 +34,7 @@ jobs:
         Icon=Windeckicon.ico
         "@
         Set-Content -Path "sfxconfig.txt" -Value $sfxConfig
-        & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $archiveName $sourceFiles
+        & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfxconfig.txt" -ep1 $archiveName $sourceFiles
         Remove-Item -Path "sfxconfig.txt"
 
     - name: Upload artifact (for push or PR)
