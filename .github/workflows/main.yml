@@ -1,12 +1,11 @@
-name: Auto Release on Push to Main
+name: Upload EXE to Existing Release
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]  # Срабатывает при создании релиза через GitHub интерфейс или API
 
 jobs:
-  release:
+  upload:
     runs-on: windows-latest
 
     steps:
@@ -18,8 +17,8 @@ jobs:
           choco install winrar -y
         shell: powershell
 
-      - name: Get Commit SHA
-        run: echo "COMMIT_SHA=${{ github.sha }}" >> $GITHUB_ENV
+      - name: Get Release Version
+        run: echo "RELEASE_VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
         shell: bash
 
       - name: Create SFX archive
@@ -35,7 +34,7 @@ jobs:
           "@
           Set-Content -Path "sfx_config.txt" -Value $SFXConfig
 
-          $exeName = "WindeckHelper_${{ env.COMMIT_SHA }}.exe"
+          $exeName = "WindeckHelper_${{ github.event.release.tag_name }}.exe"
           & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $exeName *
           
           echo "EXE_NAME=$exeName" >> $GITHUB_ENV
@@ -52,17 +51,10 @@ jobs:
           }
         shell: powershell
 
-      - name: Create GitHub Release
-        id: create_release
-        run: |
-          gh release create ${{ env.COMMIT_SHA }} ${{ env.EXE_NAME }} --title "Release ${{ env.COMMIT_SHA }}" --notes "Automated release generated from commit ${{ env.COMMIT_SHA }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Upload EXE to Release Assets
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ env.EXE_NAME }}
-          tag_name: ${{ env.COMMIT_SHA }}
+          tag_name: ${{ github.event.release.tag_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
