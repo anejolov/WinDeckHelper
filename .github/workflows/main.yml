@@ -23,7 +23,6 @@ jobs:
     - name: Create self-extracting archive with WinRAR
       run: |
         $archiveName = "WindeckHelper.exe"
-        $sourceFiles = Get-ChildItem -Path . -Recurse -Exclude .git, .github | ForEach-Object { $_.FullName }
         $sfxConfig = @"
         ;The comment below contains SFX script commands
 
@@ -35,8 +34,8 @@ jobs:
         Title=WindeckHelper Installer
         Icon=Windeckicon.ico
         "@
-        $sfxConfig | Out-File -FilePath "sfxconfig.txt" -Encoding ASCII
-        & "C:\Program Files\WinRAR\Rar.exe" a -sfx -zsfxconfig.txt -r -ep1 $archiveName $sourceFiles
+        Set-Content -Path "sfxconfig.txt" -Value $sfxConfig
+        & "C:\Program Files\WinRAR\Rar.exe" a -sfx -zsfxconfig.txt -r -ep1 $archiveName *
         Remove-Item -Path "sfxconfig.txt"
 
     - name: Upload artifact (for push or PR)
