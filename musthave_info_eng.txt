@@ -46,4 +46,4 @@ Must-have things for your Windows Steam Deck.
 - Disable Hibernation mode. Waking up from hibernate may cause the BSOD on Steam Deck.
 
 [ Set UTC Internal Clock ]
-- Change Windows clock to UTC. In case of dual boot, Windows and Linux write to the hardware clock in different ways.
+- Change Windows clock to UTC. In case of dual boot, Windows and Linux write to the hardware clock in different ways. 
