@@ -292,7 +292,7 @@ public static extern bool SystemParametersInfo(
 
             function Get-GitHubReleaseAsset {
                 param (
-                    [string]$owner,          # Владелец репозитория
+                    [string]$owner,          # Владелец репозитория .
                     [string]$repo,           # Имя репозитория
                     [string]$patternTemplate = ".*{version}.*", # Шаблон для поиска файла (с плейсхолдером {version})
                     [bool]$trimVersion = $true, # Удалять ли символ 'v' из версии
