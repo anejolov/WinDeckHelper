@@ -35,15 +35,16 @@ jobs:
           Set-Content -Path "sfx_config.txt" -Value $SFXConfig
 
           $exeName = "WindeckHelper_${{ github.event.release.tag_name }}.exe"
-          & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $exeName *
+          $exePath = "C:\path\to\your\directory\$exeName"  # Полный путь к .exe файлу
+          & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $exePath *
           
-          echo "EXE_NAME=$exeName" >> $GITHUB_ENV
-          Write-Host "EXE file created at $exeName"
+          echo "EXE_NAME=$exePath" >> $GITHUB_ENV
+          Write-Host "EXE file created at $exePath"
         shell: powershell
 
       - name: Verify EXE exists
         run: |
-          if (Test-Path ${{ env.EXE_NAME }}) {
+          if (Test-Path "${{ env.EXE_NAME }}") {
             Write-Host "EXE file found: ${{ env.EXE_NAME }}"
           } else {
             Write-Host "EXE file not found!"
