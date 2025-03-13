@@ -24,8 +24,6 @@ jobs:
       run: |
         $archiveName = "WindeckHelper.exe"
         $sfxConfig = @"
-        ;The comment below contains SFX script commands
-
         Path=%TEMP%\Windeckhelper
         Silent=1
         Overwrite=1
@@ -35,7 +33,7 @@ jobs:
         Icon=Windeckicon.ico
         "@
         Set-Content -Path "sfxconfig.txt" -Value $sfxConfig
-        & "C:\Program Files\WinRAR\Rar.exe" a -sfx -zsfxconfig.txt -r -ep1 $archiveName *
+        & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfx_config.txt" $archiveName *
         Remove-Item -Path "sfxconfig.txt"
 
     - name: Upload artifact (for push or PR)
