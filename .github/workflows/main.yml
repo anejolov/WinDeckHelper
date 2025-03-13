@@ -24,6 +24,7 @@ jobs:
       run: |
         $archiveName = "WindeckHelper.exe"
         $sourceFiles = Get-ChildItem -Path . -Recurse -Exclude .git, .github | ForEach-Object { $_.FullName }
+        $iconPath = Resolve-Path -Path "Windeckicon.ico"
         $sfxConfig = @"
         Path=%TEMP%\Windeckhelper
         Silent=1
@@ -31,7 +32,7 @@ jobs:
         Setup=PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& .\Windeckhelper.ps1"
         TempMode=1
         Title=WindeckHelper Installer
-        Icon=Windeckicon.ico
+        Icon=$iconPath
         "@
         Set-Content -Path "sfxconfig.txt" -Value $sfxConfig
         & "C:\Program Files\WinRAR\WinRAR.exe" a -r -sfx -z"sfxconfig.txt" -ep1 $archiveName $sourceFiles
@@ -43,7 +44,7 @@ jobs:
       with:
         name: WindeckHelper.exe
         path: WindeckHelper.exe
-        archive: false
+        retention-days: 5
 
   release:
     runs-on: ubuntu-latest
