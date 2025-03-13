@@ -102,8 +102,20 @@ jobs:
         baseName="${{ env.BASE_FILE_NAME }}"
         version="${{ steps.get_version.outputs.version }}"
         newName="${baseName%.exe}-${version}.exe"
+        if [[ ! -f "$baseName" ]]; then
+          echo "Файл $baseName не найден!"
+          exit 1
+        fi
         mv "$baseName" "$newName"
         echo "newName=$newName" >> $env:GITHUB_OUTPUT # Передаём новое имя файла в outputs
+
+    - name: Verify renamed file exists
+      run: |
+        newName="${{ steps.rename_archive.outputs.newName }}"
+        if [[ ! -f "$newName" ]]; then
+          echo "Файл $newName не найден после переименования!"
+          exit 1
+        fi
 
     - name: Create release (only for workflow_dispatch)
       if: github.event_name == 'workflow_dispatch'
@@ -116,6 +128,14 @@ jobs:
         release_name: Release ${{ steps.get_version.outputs.version }}
         draft: false
         prerelease: false
+
+    - name: Verify file exists before uploading asset
+      run: |
+        newName="${{ steps.rename_archive.outputs.newName }}"
+        if [[ ! -f "$newName" ]]; then
+          echo "Файл $newName не найден перед загрузкой ассета!"
+          exit 1
+        fi
 
     - name: Upload release asset
       uses: actions/upload-release-asset@v1
