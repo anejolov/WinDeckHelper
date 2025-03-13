@@ -45,14 +45,14 @@ jobs:
           Write-Host "EXE file created at $exePath"
         shell: powershell
 
-      - name: Log EXE_PATH value
+      - name: Log EXE_NAME value
         run: |
-          Write-Host "EXE_NAME path: ${{ env.EXE_NAME }}"
+          echo "EXE_NAME is: ${{ env.EXE_NAME }}"
         shell: bash
 
       - name: Verify EXE exists
         run: |
-          Write-Host "Checking if EXE exists at: ${{ env.EXE_NAME }}"  # Логирование пути перед проверкой
+          echo "Checking if EXE exists at: ${{ env.EXE_NAME }}"  # Логирование перед проверкой
           if (Test-Path "${{ env.EXE_NAME }}") {
             Write-Host "EXE file found: ${{ env.EXE_NAME }}"
           } else {
