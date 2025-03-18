@@ -1,0 +1,49 @@
+
+Must-have things for your Windows Steam Deck.
+
+[ Drivers - LCD]
+- Video Driver - Valve: November-2023
+- Audio Driver - Valve: October-2022
+- Wi-Fi driver - Valve: March-2022
+- Bluetooth driver - Microsoft Update
+- SD Card reader driver - Microsoft Update
+
+[ Drivers - OLED]
+- Video Driver - Valve: August-2024
+- Audio Driver - Valve: September-2022
+- Wi-Fi driver - Valve: August-2024
+- Bluetooth driver - Valve: August-2024
+- SD Card reader driver - Valve: March-2022
+
+[ Microsoft Visual C++ ]
+- Visual C++ modules for game and application compatibility.
+- Version:  0.83.0
+
+[ Microsoft DirectX ]
+- A collection of application programming interfaces (APIs) for game compatibility.
+
+[ Dot NET ]
+- Software framework developed by Microsoft that runs primarily on Microsoft Windows.
+- Version: 6.0.425
+
+[ Rivatuner Statistics Server (RTSS) ]
+- Tool for frame rate monitoring, on-screen display, and high-performance video capturing. Required for 'Steam Deck Tools'.
+- Version: 7.3.4
+
+[ AMD Adrenalin ]
+- Powerful tool for AMD video cards that allows you to adjust GPU scaling, Image Sharpening, Color Correction etc.
+- Version:  23.40.33
+
+[ Custom Resolution Utility ]
+- Software tool to create custom resolutions, refresh rates and monitor timings for graphics cards. Required to unlock screen resolutions on Steam Deck.
+- Version: 1.5.2
+
+[ Steam Deck Tools ]
+- Software suite for Steam Deck that includes Fan Control, Performance Overlay, Power Control and Steam Controller functionality.
+- Version: 0.7.3
+
+[ Disable Hibernation ]
+- Disable Hibernation mode. Waking up from hibernate may cause the BSOD on Steam Deck.
+
+[ Set UTC Internal Clock ]
+- Change Windows clock to UTC. In case of dual boot, Windows and Linux write to the hardware clock in different ways. 
