@@ -1,0 +1,15 @@
+
+Some tweaks for you Windows Steam Deck.
+
+[ ReplaceOSK (Touch keyboard) ]
+- Replace the legacy Windows on-screen keyboard with a more modern virtual touch keyboard.
+- Version: 2.4
+
+[ Show Touch keyboard ]
+- Enable automatic Pop-Up of touch keyboard.
+
+[ Disable login after sleep ]
+- Disable login screen after waking up from sleep.
+
+[ Disable 'ms-gamebar' error ]
+- Disable 'ms-gamebar' popup error appearance if xbox gamebar is disabled. Error appears every time a xbox gamepad is connected.

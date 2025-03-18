@@ -1,0 +1,11 @@
+
+Software you may need for Windows Steam Deck.
+
+[ Steam client ]
+- Windows Steam client
+
+[ Chrome browser ]
+- Google web browser.
+
+[ 7-zip archiver ]
+- File archiver.
