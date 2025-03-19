@@ -40,7 +40,7 @@ Must-have things for your Windows Steam Deck.
 
 [ Steam Deck Tools ]
 - Software suite for Steam Deck that includes Fan Control, Performance Overlay, Power Control and Steam Controller functionality.
-- Version: 0.7.3
+- Version: always latest
 
 [ Disable Hibernation ]
 - Disable Hibernation mode. Waking up from hibernate may cause the BSOD on Steam Deck.
