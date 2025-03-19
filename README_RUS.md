@@ -3,14 +3,14 @@
 
 WinDeckHelper - Утилита, которая автоматически устанавит всё самое нужное для работы Steam Deck на Windows.
 
-На создание проекта вдохновил  [CelesteHeartsong / SteamDeckAutomatedInstall](https://github.com/CelesteHeartsong/SteamDeckAutomatedInstall)
-
 ![WinDeckHelper-2 3](https://github.com/user-attachments/assets/8f40b580-5e02-4c80-b6b8-395f52954d78)
 
-[Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/tag/v2.3.1)
+[Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/)
 
 ## Как Установить
-- Запустить WinDeckHelper.exe от имени Администратора
+- Открйоте [Релизы](https://github.com/anejolov/WinDeckHelper/releases/) и выберете последний релиз
+- Нажмите на "Source code.zip" чтобы скачать архив
+- Распакуйте архив в папку и запустите "WinDeckHelper.bat" от имени Администратора
 - Выбрать версию Steam Deck LCD/OLED
 - Если Wi-Fi драйвера нет по умолчанию, то ставим его нажав на кнопку [Уст. Wi-Fi драйвер]
 - Выбрать, что будем ставить и нажимаем СТАРТ.
