@@ -8,7 +8,7 @@ WinDeckHelper - Утилита, которая автоматически уст
 [Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/)
 
 ## Как Установить
-- Открйоте [Релизы](https://github.com/anejolov/WinDeckHelper/releases/) и выберете последний релиз
+- Откройте [Релизы](https://github.com/anejolov/WinDeckHelper/releases/) и выберете последний релиз
 - Нажмите на "Source code.zip" чтобы скачать архив
 - Распакуйте архив в папку и запустите "WinDeckHelper.bat" от имени Администратора
 - Выбрать версию Steam Deck LCD/OLED
