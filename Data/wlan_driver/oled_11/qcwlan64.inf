@@ -14,7 +14,7 @@ Class       = Net
 ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
 Provider    = %QUALCOMM%
 CatalogFile = qcwlan64.cat
-DriverVer   = 10/26/2023,2.0.123.1086
+DriverVer   = 10/30/2023,2.0.123.1086
 PnpLockdown = 1
 
 [Manufacturer]
@@ -1266,6 +1266,7 @@ bdwlan01g.e0a,,,2
 bdwlang.elf,,,2
 bdwlang.e8b,,,2
 bdwlan03g.e09,,,2
+bdwlan03.e09,,,2
 
 [QcWlan_BD_NFA725_2_0.CopyFiles]
 bdwlan_wcn685x_2p0_NFA725.elf,,,2
@@ -1431,6 +1432,7 @@ bdwlan01g.e0a                        = 1,,
 bdwlang.elf                          = 1,,
 bdwlang.e8b                          = 1,,
 bdwlan03g.e09                        = 1,,
+bdwlan03.e09                        = 1,,
 regdb.bin                            = 1,,
 Data20.msc                           = 1,,
 bdwlan_wcn685x_45.elf				 = 1,,	
