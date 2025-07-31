@@ -6,12 +6,11 @@ WinDeckHelper - Utilities installer and tweaker for your Windows Steam Deck.
 
 ![WinDeckHelper-2 3_eng](https://github.com/user-attachments/assets/cf92a494-a93b-41a8-836b-760306b60d39)
 
-[Download latest version here](https://github.com/anejolov/WinDeckHelper/releases/)
-
+## How To Download
+Click on "<> Code" and then "Downalod ZIP"
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/1fcafd47-d73f-4f2b-86bb-0d1a4d5ba6ac" />
 
 ## How To Install
-- Open [Releases](https://github.com/anejolov/WinDeckHelper/releases/) and select latest release
-- Click on "Source code.zip" to download the archive
 - Extract archive and run "WinDeckHelper.bat" as Administrator
 - Select Steam Deck version LCD/OLED
 - If Wi-Fi driver is not installed by default, install it by clicking on [Install WI-FI Driver]
