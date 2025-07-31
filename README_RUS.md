@@ -5,11 +5,11 @@ WinDeckHelper - Утилита, которая автоматически уст
 
 ![WinDeckHelper-2 3](https://github.com/user-attachments/assets/8f40b580-5e02-4c80-b6b8-395f52954d78)
 
-[Скачать последнюю версию](https://github.com/anejolov/WinDeckHelper/releases/)
+## Как Скачать
+Нажать на "<> Code" и потом "Downalod ZIP"
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/1fcafd47-d73f-4f2b-86bb-0d1a4d5ba6ac" />
 
 ## Как Установить
-- Откройте [Релизы](https://github.com/anejolov/WinDeckHelper/releases/) и выберете последний релиз
-- Нажмите на "Source code.zip" чтобы скачать архив
 - Распакуйте архив в папку и запустите "WinDeckHelper.bat" от имени Администратора
 - Выбрать версию Steam Deck LCD/OLED
 - Если Wi-Fi драйвера нет по умолчанию, то ставим его нажав на кнопку [Уст. Wi-Fi драйвер]
